@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Khan Academy Timer",
+  "version": "1.0",
+  "description": "Automatically times SAT practice questions",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://www.khanacademy.org/test-prep/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.khanacademy.org/test-prep/*"],
+      "js": ["config.js", "content.js"],
+      "run_at": "document_end",
+      "persistent": true
+    }
+  ]
+}
