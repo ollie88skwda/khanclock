@@ -13,10 +13,16 @@
         </div>
         <div class="timer-container">
             <div id="countdown-display">10</div>
-            <div class="timer-label">seconds remaining</div>
+            <div class="timer-label">seconds</div>
         </div>
-        <button id="start-timer" class="start-button">Start Timer</button>
-        <div class="status-message" id="status-message">Click start to begin timer</div>
+        <div class="input-container">
+            <input type="number" id="timer-duration" min="1" value="10" class="timer-input">
+            <label for="timer-duration">seconds per question</label>
+        </div>
+        <div class="button-container">
+            <button id="skip-question" class="skip-button">Skip Question</button>
+        </div>
+        <div class="status-message" id="status-message">Timer starts automatically</div>
     </div>
     <script src="config.js"></script>
     <script src="popup.js"></script>

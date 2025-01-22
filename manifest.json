@@ -5,7 +5,8 @@
   "description": "Automatically times SAT practice questions",
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+    "storage"
   ],
   "host_permissions": [
     "*://www.khanacademy.org/test-prep/*"
@@ -15,10 +16,24 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://www.khanacademy.org/test-prep/*"],
-      "js": ["config.js", "content.js"],
-      "run_at": "document_end",
-      "persistent": true
+      "matches": [
+        "*://www.khanacademy.org/test-prep/*"
+      ],
+      "js": [
+        "config.js",
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "config.js"
+      ],
+      "matches": [
+        "*://www.khanacademy.org/*"
+      ]
     }
   ]
 }
